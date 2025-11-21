@@ -3,7 +3,6 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { PostHogWrapper } from "@/components/PostHogWrapper";
 import Tag from "@/tag/Tag";
-import ThemeProvider from "@/providers/themeProvider/ThemeProvider";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -52,20 +51,7 @@ export default function RootLayout({
       <PostHogWrapper>
         <body className={`${spaceGrotesk.variable} antialiased`}>
           <Tag />
-          <ThemeProvider
-            defaultButtonVariant="hover-magnetic"
-            defaultTextAnimation="entrance-slide"
-            borderRadius="soft"
-            contentWidth="small"
-            sizing="small"
-            background="animatedGrid"
-            cardStyle="gradient-bordered"
-            primaryButtonStyle="flat"
-            secondaryButtonStyle="solid"
-            showBlurBottom={false}
-          >
-            {children}
-          </ThemeProvider>
+          {children}
         
         <script
           dangerouslySetInnerHTML={{

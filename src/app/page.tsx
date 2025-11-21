@@ -1,12 +1,13 @@
-"use client"
+"use client";
 
+import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import NavbarLayoutFloatingInline from '@/components/navbar/NavbarLayoutFloatingInline';
 import HeroBillboardGallery from '@/components/sections/hero/HeroBillboardGallery';
 import TagAbout from '@/components/sections/about/TagAbout';
 import FeatureCardFive from '@/components/sections/feature/FeatureCardFive';
 import ProductCardOne from '@/components/sections/product/ProductCardOne';
 import PricingCardOne from '@/components/sections/pricing/PricingCardOne';
-import MetricCardOne from '@/components/sections/metric/MetricCardOne';
+import MetricCardOne from '@/components/sections/metrics/MetricCardOne';
 import TeamCardOne from '@/components/sections/team/TeamCardOne';
 import TestimonialCardTwo from '@/components/sections/testimonial/TestimonialCardTwo';
 import SocialProofOne from '@/components/sections/socialProof/SocialProofOne';
@@ -17,7 +18,18 @@ import { Star, Award, Fish, ChefHat, Crown, Sparkles, UtensilsCrossed, DollarSig
 
 export default function SushiRestaurantPage() {
   return (
-    <>
+    <ThemeProvider
+      defaultButtonVariant="hover-magnetic"
+      defaultTextAnimation="entrance-slide"
+      borderRadius="soft"
+      contentWidth="small"
+      sizing="small"
+      background="animatedGrid"
+      cardStyle="gradient-bordered"
+      primaryButtonStyle="flat"
+      secondaryButtonStyle="solid"
+      showBlurBottom={false}
+    >
       <div id="nav" data-section="nav">
         <NavbarLayoutFloatingInline
           navItems={[
@@ -375,6 +387,6 @@ export default function SushiRestaurantPage() {
           ]}
         />
       </div>
-    </>
+    </ThemeProvider>
   );
 }
